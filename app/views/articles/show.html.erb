@@ -1,4 +1,5 @@
-<h1><%= @articles.title %></h2>
-<h2><%= @articles.content %></h2>
+<h1><%= Kramdown::Document.new(@articles.title).to_html.html_safe %></h2>
+<h2><%= Kramdown::Document.new(@articles.content).to_html.html_safe %></h2>
 
 <%= link_to "retour", articles_path(@articles)%>
+
