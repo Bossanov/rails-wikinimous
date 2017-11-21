@@ -1,0 +1,9 @@
+<% @articles.each do |article| %>
+  <h2><%= article.title %></h2>
+  <%= link_to "Eliminer l'article", article_path(article),
+      method: :delete,
+      data: { confirm: "Etes vous sûr?" } %>
+<%= link_to "Editer un article", edit_article_path(article)%>
+<%= link_to "Voir le détail de l'article", article_path(article), method: :get %>
+<% end %>
+<%= link_to "Ajouter un article", new_article_path(@articles)%>
